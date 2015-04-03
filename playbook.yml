@@ -1,5 +1,5 @@
 - name: Custom Desktop tweeks
-  hosts: all 
+  hosts: kurron-desktop-tweaks 
   tasks:
       - name: Copy etc change script to a safe place
         copy: src=scripts/set-etc-environment.sh dest=/tmp/set-etc-environment.sh owner=root group=root mode=755 backup=no
