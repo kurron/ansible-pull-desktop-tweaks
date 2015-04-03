@@ -11,5 +11,7 @@
         copy: src=scripts/append-line-to-bashrc.sh dest=/tmp/append-line-to-bashrc.sh owner=root group=root mode=755 backup=no
       - name: set editor to VI
         command: /tmp/append-line-to-bashrc.sh editor 'set -o vi' 
+      - name: create the rkurr group 
+        group: name=rkurr state=present
       - name: create the rkurr account 
-        user: name=rkurr group=rkurr groups=docker password=$6$hh4dPYYBFAJzo$rLGVJWlaikReLMgLc9Fd.uvfXViTfBPT7..sye4X2drCo8qr/TORaNuaQfCyZETNzYZCX2euaq9bMN7TQHHMt1
+        user: name=rkurr group=rkurr groups=docker state=present password=$6$hh4dPYYBFAJzo$rLGVJWlaikReLMgLc9Fd.uvfXViTfBPT7..sye4X2drCo8qr/TORaNuaQfCyZETNzYZCX2euaq9bMN7TQHHMt1
