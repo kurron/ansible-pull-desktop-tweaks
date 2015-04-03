@@ -1,0 +1,9 @@
+- name: Custom Desktop tweeks
+  hosts: all 
+  tasks:
+      - name: Copy etc change script to a safe place
+        copy: src=scripts/set-etc-environment.sh dest=/tmp/set-etc-environment.sh owner=root group=root mode=755 backup=no
+      - name: Add silly environment variable
+        command: /tmp/set-etc-environment.sh CUSTOM_RON_WAS_HERE true 
+      - name: Copy silly file to /tmp 
+        copy: src=files/ron-was-here.txt dest=/tmp/ron-was-here.txt owner=root group=root mode=755 backup=no
