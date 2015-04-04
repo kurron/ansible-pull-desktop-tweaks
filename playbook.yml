@@ -15,3 +15,5 @@
         group: name=rkurr state=present
       - name: create the rkurr account 
         user: name=rkurr group=rkurr groups=docker state=present password=$6$hh4dPYYBFAJzo$rLGVJWlaikReLMgLc9Fd.uvfXViTfBPT7..sye4X2drCo8qr/TORaNuaQfCyZETNzYZCX2euaq9bMN7TQHHMt1
+      - name: Copy login icon  
+        copy: src=files/han-solo.png dest=/home/vagrant/.face owner=vagrant group=vagrant backup=no mode=644
