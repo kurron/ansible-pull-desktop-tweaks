@@ -19,3 +19,7 @@
         copy: src=files/han-solo.png dest=/home/vagrant/.face owner=vagrant group=vagrant backup=no mode=644
       - name: Remove the desktop emacs file
         file: path=/home/vagrant/Desktop/emacs.desktop state=absent 
+      - name: Create the terminal configuration folder 
+        file: path=/home/vagrant/.config/xfce4/terminal state=directory group=vagrant owner=vagrant 
+      - name: Copy terminal configuration  
+        copy: src=files/terminalrc dest=/home/vagrant/.config/xfce4/terminal/terminalrc owner=vagrant group=vagrant backup=no mode=644
