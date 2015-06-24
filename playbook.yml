@@ -35,4 +35,6 @@
         copy: src=scripts/git-branch-from-current-work.sh dest=/home/vagrant/bin/git-branch-from-current-work.sh owner=vagrant group=vagrant mode=755 backup=no
       - name: Copy Git script to bin folder 
         copy: src=scripts/git-revert.sh dest=/home/vagrant/bin/git-revert.sh owner=vagrant group=vagrant mode=755 backup=no
+      - name: Change the hostname 
+        hostname: name=kal-el
 
