@@ -37,4 +37,5 @@
         copy: src=scripts/git-revert.sh dest=/home/vagrant/bin/git-revert.sh owner=vagrant group=vagrant mode=755 backup=no
       - name: Change the hostname 
         hostname: name=kal-el
+      - command: /tmp/add-host-name.sh kal-el 127.0.0.1 
 
