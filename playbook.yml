@@ -40,6 +40,12 @@
       - name: Change the hostname 
         hostname: name=kal-el
       - lineinfile: dest=/etc/hosts line='127.0.0.1 kal-el'
+      - git: repo=https://github.com/kurron/jvm-development-environment.git dest=/home/vagrant/GitHub/jvm-development-environment
+      - git: repo=https://github.com/kurron/ansible-pull-development.git dest=/home/vagrant/GitHub/ansible-pull-development
+      - git: repo=https://github.com/kurron/ansible-pull-docker.git dest=/home/vagrant/GitHub/ansible-pull-docker
+      - git: repo=https://github.com/kurron/ansible-pull-operations.git dest=/home/vagrant/GitHub/ansible-pull-operations
+      - git: repo=https://github.com/kurron/ansible-pull-transparent.git dest=/home/vagrant/GitHub/ansible-pull-transparent
+      - git: repo=https://github.com/kurron/ansible-pull-desktop-tweaks.git dest=/home/vagrant/GitHub/ansible-pull-desktop-tweaks
       - name: Set permissions on the home directory
         file: path=/home/vagrant owner=vagrant group=vagrant recurse=true state=directory
 
