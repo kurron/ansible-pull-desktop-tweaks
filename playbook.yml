@@ -25,10 +25,10 @@
         file: path=/home/vagrant/.config/xfce4/terminal state=directory group=vagrant owner=vagrant 
       - name: Copy terminal configuration  
         copy: src=files/terminalrc dest=/home/vagrant/.config/xfce4/terminal/terminalrc owner=vagrant group=vagrant backup=no mode=644
-      - lineinfile: dest=/etc/hosts line='atlantis 192.168.1.229'
-      - lineinfile: dest=/etc/hosts line='batcave 192.168.1.222'
-      - lineinfile: dest=/etc/hosts line='docker 192.168.1.233'
-      - lineinfile: dest=/etc/hosts line='stargate 192.168.1.227'
+      - lineinfile: dest=/etc/hosts line='192.168.1.229 atlantis'
+      - lineinfile: dest=/etc/hosts line='192.168.1.222 batcave'
+      - lineinfile: dest=/etc/hosts line='192.168.1.233 docker'
+      - lineinfile: dest=/etc/hosts line='192.168.1.227 stargate'
       - name: Copy apt configuration file to use the local cache
         copy: src=files/01proxy dest=/etc/apt/apt.conf.d/01proxy owner=root group=root mode=644 backup=no
       - name: Create destination directory
@@ -39,7 +39,7 @@
         copy: src=scripts/git-revert.sh dest=/home/vagrant/bin/git-revert.sh owner=vagrant group=vagrant mode=755 backup=no
       - name: Change the hostname 
         hostname: name=kal-el
-      - lineinfile: dest=/etc/hosts line='kal-el 127.0.0.1'
+      - lineinfile: dest=/etc/hosts line='127.0.0.1 kal-el'
       - name: Set permissions on the home directory
         file: path=/home/vagrant owner=vagrant group=vagrant recurse=true state=directory
 
