@@ -1,34 +1,34 @@
-- name: Custom Desktop tweeks
-  hosts: kurron-desktop-tweaks 
+#!/usr/bin/env ansible-playbook
+
+- name: Gather prerequisites
+  hosts: all
+  gather_facts: True
   tasks:
-      - name: Copy etc change script to a safe place
-        copy: src=scripts/set-etc-environment.sh dest=/tmp/set-etc-environment.sh owner=root group=root mode=755 backup=no
+    - name: create groups based on distribution
+      group_by: key={{ ansible_distribution }}
+
+- name: Custom Desktop tweeks
+  hosts: Ubuntu 
+  sudo: True 
+  tasks:
       - name: Add silly environment variable
-        command: /tmp/set-etc-environment.sh CUSTOM_RON_WAS_HERE true 
+        lineinfile: dest=/etc/environment line='CUSTOM_RON_WAS_HERE=true'
       - name: Copy Git configuration file
         copy: src=files/.gitconfig dest=/home/vagrant/.gitconfig owner=vagrant group=vagrant mode=644 backup=no
       - name: Copy bashrc change script to a safe place
         copy: src=scripts/append-line-to-bashrc.sh dest=/tmp/append-line-to-bashrc.sh owner=root group=root mode=755 backup=no
       - name: set editor to VI
         command: /tmp/append-line-to-bashrc.sh editor 'set -o vi' 
-      - name: create the rkurr group 
-        group: name=rkurr state=present
-      - name: create the rkurr account 
-        user: name=rkurr group=rkurr groups=docker state=present password=$6$hh4dPYYBFAJzo$rLGVJWlaikReLMgLc9Fd.uvfXViTfBPT7..sye4X2drCo8qr/TORaNuaQfCyZETNzYZCX2euaq9bMN7TQHHMt1
       - name: Copy login icon  
         copy: src=files/han-solo.png dest=/home/vagrant/.face owner=vagrant group=vagrant backup=no mode=644
-      - name: Remove the desktop emacs file
-        file: path=/home/vagrant/Desktop/emacs.desktop state=absent 
       - name: Create the terminal configuration folder 
         file: path=/home/vagrant/.config/xfce4/terminal state=directory group=vagrant owner=vagrant 
       - name: Copy terminal configuration  
         copy: src=files/terminalrc dest=/home/vagrant/.config/xfce4/terminal/terminalrc owner=vagrant group=vagrant backup=no mode=644
-      - name: Copy hostname script to a safe place
-        copy: src=scripts/add-host-name.sh dest=/tmp/add-host-name.sh owner=root group=root mode=755 backup=no
-      - command: /tmp/add-host-name.sh atlantis 192.168.1.229
-      - command: /tmp/add-host-name.sh batcave 192.168.1.222
-      - command: /tmp/add-host-name.sh docker 192.168.1.233
-      - command: /tmp/add-host-name.sh stargate 192.168.1.227
+      - lineinfile: dest=/etc/hosts line='atlantis 192.168.1.229'
+      - lineinfile: dest=/etc/hosts line='batcave 192.168.1.222'
+      - lineinfile: dest=/etc/hosts line='docker 192.168.1.233'
+      - lineinfile: dest=/etc/hosts line='stargate 192.168.1.227'
       - name: Copy apt configuration file to use the local cache
         copy: src=files/01proxy dest=/etc/apt/apt.conf.d/01proxy owner=root group=root mode=644 backup=no
       - name: Copy Git script to bin folder 
@@ -37,5 +37,7 @@
         copy: src=scripts/git-revert.sh dest=/home/vagrant/bin/git-revert.sh owner=vagrant group=vagrant mode=755 backup=no
       - name: Change the hostname 
         hostname: name=kal-el
-      - command: /tmp/add-host-name.sh kal-el 127.0.0.1 
+      - lineinfile: dest=/etc/hosts line='kal-el 127.0.0.1'
+      - name: Set permissions on the home directory
+        file: path=/home/vagrant owner=vagrant group=vagrant recurse=true state=directory
 
