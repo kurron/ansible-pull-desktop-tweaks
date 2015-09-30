@@ -49,3 +49,15 @@
       - name: Set permissions on the home directory
         file: path=/home/vagrant owner=vagrant group=vagrant recurse=true state=directory
 
+- name: Tools I Like
+  hosts: Ubuntu
+  sudo: True
+  tasks:
+      - apt: name=tree state=latest
+      - apt: name=tmux state=latest
+      - apt: name=systat state=latest
+      - apt: name=iotop state=latest
+      - apt: name=iftop state=latest
+      - apt: name=wireshark state=latest
+      - apt: name=chromium-browser state=latest
+
