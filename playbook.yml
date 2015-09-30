@@ -31,6 +31,8 @@
       - lineinfile: dest=/etc/hosts line='stargate 192.168.1.227'
       - name: Copy apt configuration file to use the local cache
         copy: src=files/01proxy dest=/etc/apt/apt.conf.d/01proxy owner=root group=root mode=644 backup=no
+      - name: Create destination directory
+        file: path=/home/vagrant/bin owner=vagrant group=vagrant state=directory mode=755
       - name: Copy Git script to bin folder 
         copy: src=scripts/git-branch-from-current-work.sh dest=/home/vagrant/bin/git-branch-from-current-work.sh owner=vagrant group=vagrant mode=755 backup=no
       - name: Copy Git script to bin folder 
