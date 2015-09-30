@@ -55,7 +55,7 @@
   tasks:
       - apt: name=tree state=latest
       - apt: name=tmux state=latest
-      - apt: name=systat state=latest
+      - apt: name=sysstat state=latest
       - apt: name=iotop state=latest
       - apt: name=iftop state=latest
       - apt: name=wireshark state=latest
