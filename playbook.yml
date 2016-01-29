@@ -34,7 +34,7 @@
       - name: Change the hostname 
         hostname: name=kal-el
       - name: Set Gradle JVM options
-        lineinfile: "dest=/home/vagrant/.bashrc line='export GRADLE_OPTS="-Xmx512m -Dorg.gradle.jvmargs='-Xmx512m -XX:MaxPermSize=128m'"'"
+        lineinfile: 'dest=/home/vagrant/.bashrc line=export GRADLE_OPTS="-Xmx512m -Dorg.gradle.jvmargs='-Xmx512m -XX:MaxPermSize=128m'"'
       - lineinfile: dest=/etc/hosts line='127.0.0.1 kal-el'
       - git: repo=https://github.com/kurron/jvm-development-environment.git dest=/home/vagrant/GitHub/jvm-development-environment
       - git: repo=https://github.com/kurron/ansible-pull-development.git dest=/home/vagrant/GitHub/ansible-pull-development
