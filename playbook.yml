@@ -27,7 +27,7 @@
         copy: src=files/terminalrc dest=/home/vagrant/.config/xfce4/terminal/terminalrc owner=vagrant group=vagrant backup=no mode=644
       - lineinfile: dest=/etc/hosts line='192.168.1.229 atlantis'
       - lineinfile: dest=/etc/hosts line='192.168.1.222 batcave'
-      - lineinfile: dest=/etc/hosts line='192.168.1.233 docker'
+      - lineinfile: dest=/etc/hosts line='192.168.1.233 bifrost'
       - lineinfile: dest=/etc/hosts line='192.168.1.227 stargate'
       - lineinfile: dest=/etc/hosts line='192.168.1.236 openvpn'
 #     - name: Copy apt configuration file to use the local cache
