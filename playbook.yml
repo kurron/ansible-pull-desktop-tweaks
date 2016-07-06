@@ -9,7 +9,7 @@
 
 - name: Custom Desktop tweeks
   hosts: Ubuntu 
-  sudo: True 
+  become: True
   tasks:
       - name: Add silly environment variable
         lineinfile: dest=/etc/environment line='CUSTOM_RON_WAS_HERE=true'
@@ -56,7 +56,7 @@
 
 - name: Tools I Like
   hosts: Ubuntu
-  sudo: True
+  become: True
   tasks:
       - apt: name=tree state=latest
       - apt: name=tmux state=latest
