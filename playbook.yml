@@ -65,4 +65,7 @@
       - apt: name=iftop state=latest
       - apt: name=wireshark state=latest
       - apt: name=chromium-browser state=latest
+      - apt: name=imagemagick state=latest
+      - apt: name=gtk-recordmydesktop state=latest
+      - apt: name=mplayer state=latest
 
