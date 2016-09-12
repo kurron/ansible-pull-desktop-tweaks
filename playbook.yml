@@ -62,6 +62,7 @@
   become: True
   tasks:
       - apt_key: url=https://atlassian.artifactoryonline.com/atlassian/api/gpg/key/public state=present
-      - apt_repository: repo='deb https://atlassian.artifactoryonline.com/atlassian/hipchat-apt-client $(lsb_release -c -s) main' state=present mode=0644
+#     - apt_repository: repo='deb https://atlassian.artifactoryonline.com/atlassian/hipchat-apt-client $(lsb_release -c -s) main' state=present mode=0644
+      - apt_repository: repo='deb https://atlassian.artifactoryonline.com/atlassian/hipchat-apt-client xenial main' state=present mode=0644
       - apt: name=hipchat4 state=latest update_cache=true
 
