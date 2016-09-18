@@ -39,6 +39,7 @@
       - git: repo=https://github.com/kurron/sequence-diagrams.git dest=/home/vagrant/GitHub/sequence-diagrams
       - git: repo=https://github.com/kurron/lazybones-experiment.git dest=/home/vagrant/GitHub/lazybones-experiment
       - git: repo=https://github.com/awslabs/git-secrets.git dest=/home/vagrant/GitHub/git-secrets
+      - git: repo=https://github.com/kurron/spring-configuration-files.git dest=/home/vagrant/GitHub/spring-configuration-files
       - file: path=/home/vagrant owner=vagrant group=vagrant recurse=true state=directory
       - shell: cd /home/vagrant/GitHub/git-secrets ; make install
 
