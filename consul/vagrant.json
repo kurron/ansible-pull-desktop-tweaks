@@ -1,0 +1,12 @@
+{
+    "bind_addr": "192.168.1.46",
+    "client_addr": "192.168.1.46",
+    "data_dir": "/consul/data",
+    "datacenter": "basement",
+    "leave_on_terminate": true,
+    "rejoin_after_leave": true,
+    "retry_join" : ["192.168.1.229"],
+    "skip_leave_on_interrupt" : true,
+    "server" : false,
+    "ui" : true
+}
