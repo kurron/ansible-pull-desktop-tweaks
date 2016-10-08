@@ -7,7 +7,7 @@
     - group_by: key={{ ansible_distribution }}
 
 - name: Custom Desktop tweeks
-  hosts: Ubuntu 
+  hosts: all
   become: True
   tasks:
       - lineinfile: dest=/etc/environment line='CUSTOM_RON_WAS_HERE=true'
@@ -42,7 +42,7 @@
       - file: path=/home/vagrant owner=vagrant group=vagrant recurse=true state=directory
       - shell: cd /home/vagrant/GitHub/git-secrets ; make install
 
-- name: Tools I Like
+- name: Tools (Ubuntu)
   hosts: Ubuntu
   become: True
   tasks:
