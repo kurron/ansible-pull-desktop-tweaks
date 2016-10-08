@@ -1,0 +1,12 @@
+# Vagrant
+version: '2'
+services:
+    consul:
+        image: consul:latest
+        container_name: consul
+        restart: always
+        network_mode: host
+        volumes:
+        - ./consul:/consul/config:ro
+#       - /mnt/consul:/consul/data:rw
+
