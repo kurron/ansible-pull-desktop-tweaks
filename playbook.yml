@@ -58,3 +58,17 @@
       - apt: name=gtk-recordmydesktop state=latest
       - apt: name=mplayer state=latest
 
+- name: Tools (CentOS)
+  hosts: CentOS
+  become: True
+  tasks:
+      - yum: name=tree state=latest
+      - yum: name=tmux state=latest
+      - yum: name=sysstat state=latest
+      - yum: name=iotop state=latest
+      - yum: name=iftop state=latest
+      - yum: name=wireshark state=latest
+#     - apt: name=chromium-browser state=latest
+      - yum: name=ImageMagick state=latest
+      - yum: name=recordmydesktop state=latest
+#     - apt: name=mplayer state=latest
