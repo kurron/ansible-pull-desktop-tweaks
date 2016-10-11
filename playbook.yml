@@ -6,12 +6,12 @@
   tasks:
     - group_by: key={{ ansible_distribution }}
 
-- name: Install Sysdig
+- name: Install SDKMAN!
   hosts: CentOS
-  become: True
+  become: False
   tasks:
-      - get_url: url=https://s3.amazonaws.com/download.draios.com/stable/install-sysdig dest=/root/install-sysdig mode=555
-      - shell: /root/install-sysdig
+      - get_url: url=https://get.sdkman.io dest=/home/vagrant/Downloads/install-sdkman mode=555
+      - shell: /home/vagrant/Downloads/install-sdkman
 
 - name: Custom Desktop tweeks
   hosts: all
