@@ -6,6 +6,13 @@
   tasks:
     - group_by: key={{ ansible_distribution }}
 
+- name: Install Sysdig
+  hosts: CentOS
+  become: True
+  tasks:
+      - get_url: url=https://s3.amazonaws.com/download.draios.com/stable/install-sysdig dest=/root/install-sysdig mode=555
+      - shell: /root/install-sysdig
+
 - name: Custom Desktop tweeks
   hosts: all
   become: True
