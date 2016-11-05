@@ -117,3 +117,14 @@
           - chromium
           - ImageMagick
           - recordmydesktop
+
+- name: Set Home Folder Permissions (must be last play)
+  hosts: all
+  become: True
+  tasks:
+    - file:
+          path: /home/vagrant
+          owner: vagrant
+          group: vagrant
+          recurse: true
+          state: directory
