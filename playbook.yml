@@ -85,14 +85,14 @@
   hosts: Ubuntu
   become: True
   tasks:
-      apt:
+      - apt:
           name: "{{ item }}"
           state: latest
-      with_items:
-        - chromium-browser
-        - imagemagick
-        - gtk-recordmydesktop
-        - mplayer
+        with_items:
+            - chromium-browser
+            - imagemagick
+            - gtk-recordmydesktop
+            - mplayer
 
 - name: Tools (CentOS)
   hosts: CentOS
