@@ -31,7 +31,6 @@
       - file:
             path: "/home/vagrant/bin"
             state: directory
-            mode: 755
       - lineinfile:
             dest: "/home/vagrant/.bashrc"
             line: "set -o vi"
