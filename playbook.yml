@@ -10,12 +10,31 @@
   hosts: all
   become: False
   tasks:
-      - copy: src="files/.gitconfig dest={{ansible_user_dir}}/.gitconfig mode=644 backup=no
-      - copy: src=files/han-solo.png dest={{ansible_user_dir}}/.face owner=vagrant group=vagrant backup=no mode=644
-      - file: path={{ansible_user_dir}}/.config/xfce4/terminal state=directory group=vagrant owner=vagrant
-      - copy: src=files/terminalrc dest={{ansible_user_dir}}/.config/xfce4/terminal/terminalrc owner=vagrant group=vagrant backup=no mode=644
-      - file: path={{ansible_user_dir}}/bin owner=vagrant group=vagrant state=directory mode=755
-      - lineinfile: dest={{ansible_user_dir}}/.bashrc line="set -o vi"
+      - copy:
+            src: files/.gitconfig
+            dest: "{{ansible_user_dir}}/.gitconfig"
+            mode: 644
+            backup: no
+      - copy:
+            src: files/han-solo.png
+            dest: "{{ansible_user_dir}}/.face"
+            backup: no
+            mode: 644
+      - file:
+            path: "{{ansible_user_dir}}/.config/xfce4/terminal"
+            state: directory
+      - copy:
+            src: files/terminalrc
+            dest: "{{ansible_user_dir}}/.config/xfce4/terminal/terminalrc"
+            backup: no
+            mode: 644
+      - file:
+            path: "{{ansible_user_dir}}/bin"
+            state: directory
+            mode: 755
+      - lineinfile:
+            dest: "{{ansible_user_dir}}/.bashrc"
+            line: "set -o vi"
       - git:
             repo: "{{ item.repo }}"
             dest: "{{ansible_user_dir}}/GitHub/{{ item.dest }}"
@@ -46,11 +65,6 @@
           - '192.168.1.227 stargate'
           - '192.168.1.236 openvpn'
           - '127.0.0.1 kal-el'
-
-- name: Privileged Tasks
-  hosts: all
-  become: True
-  tasks:
 
 - name: Tools (common)
   hosts: all
