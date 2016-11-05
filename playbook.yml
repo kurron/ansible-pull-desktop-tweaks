@@ -110,7 +110,7 @@
   hosts: Fedora
   become: True
   tasks:
-      - yum:
+      - dnf:
             name: "{{ item }}"
             state: latest
         with_items:
