@@ -12,32 +12,32 @@
   tasks:
       - copy:
             src: files/.gitconfig
-            dest: "{{ansible_user_dir}}/.gitconfig"
+            dest: "/home/vagrant/.gitconfig"
             mode: 644
             backup: no
       - copy:
             src: files/han-solo.png
-            dest: "{{ansible_user_dir}}/.face"
+            dest: "/home/vagrant/.face"
             backup: no
             mode: 644
       - file:
-            path: "{{ansible_user_dir}}/.config/xfce4/terminal"
+            path: "/home/vagrant/.config/xfce4/terminal"
             state: directory
       - copy:
             src: files/terminalrc
-            dest: "{{ansible_user_dir}}/.config/xfce4/terminal/terminalrc"
+            dest: "/home/vagrant/.config/xfce4/terminal/terminalrc"
             backup: no
             mode: 644
       - file:
-            path: "{{ansible_user_dir}}/bin"
+            path: "/home/vagrant/bin"
             state: directory
             mode: 755
       - lineinfile:
-            dest: "{{ansible_user_dir}}/.bashrc"
+            dest: "/home/vagrant/.bashrc"
             line: "set -o vi"
       - git:
             repo: "{{ item.repo }}"
-            dest: "{{ansible_user_dir}}/GitHub/{{ item.dest }}"
+            dest: "/home/vagrant/GitHub/{{ item.dest }}"
         with_items:
           - { repo: "https://github.com/kurron/jvm-development-environment.git", dest: "jvm-development-environment" }
           - { repo: "https://github.com/kurron/ansible-pull-desktop-tweaks.git", dest: "ansible-pull-desktop-tweaks.git" }
