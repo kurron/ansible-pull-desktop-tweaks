@@ -59,13 +59,13 @@
       - package:
             name: "{{ item }}"
             state: latest
-      with_items:
-      - tree
-      - tmux
-      - sysstat
-      - iotop
-      - iftop
-      - wireshark
+        with_items:
+          - tree
+          - tmux
+          - sysstat
+          - iotop
+          - iftop
+          - wireshark
 
 - name: Tools (Ubuntu)
   hosts: Ubuntu
