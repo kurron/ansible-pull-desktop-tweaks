@@ -6,77 +6,100 @@
   tasks:
     - group_by: key={{ ansible_distribution }}
 
-- name: Install SDKMAN!
-  hosts: CentOS
+- name: Non-Privileged Tasks
+  hosts: all
   become: False
   tasks:
-      - get_url: url=https://get.sdkman.io dest=/home/vagrant/Downloads/install-sdkman mode=555
-      - shell: /home/vagrant/Downloads/install-sdkman
+      - copy: src="files/.gitconfig dest={{ansible_user_dir}}/.gitconfig mode=644 backup=no
+      - copy: src=files/han-solo.png dest={{ansible_user_dir}}/.face owner=vagrant group=vagrant backup=no mode=644
+      - file: path={{ansible_user_dir}}/.config/xfce4/terminal state=directory group=vagrant owner=vagrant
+      - copy: src=files/terminalrc dest={{ansible_user_dir}}/.config/xfce4/terminal/terminalrc owner=vagrant group=vagrant backup=no mode=644
+      - file: path={{ansible_user_dir}}/bin owner=vagrant group=vagrant state=directory mode=755
+      - lineinfile: dest={{ansible_user_dir}}/.bashrc line="set -o vi"
+      - git:
+            repo: "{{ item.repo }}"
+            dest: "{{ansible_user_dir}}/GitHub/{{ item.dest }}"
+        with_items:
+          - { repo: "https://github.com/kurron/jvm-development-environment.git", dest: "jvm-development-environment" }
+          - { repo: "https://github.com/kurron/ansible-pull-desktop-tweaks.git", dest: "ansible-pull-desktop-tweaks.git" }
+          - { repo: "https://github.com/kurron/scripts.git", dest: "scripts.git" }
+          - { repo: "https://github.com/kurron/docker-oracle-jdk-8.git", dest: "docker-oracle-jdk-8.git" }
+          - { repo: "https://github.com/kurron/sequence-diagrams.git", dest: "sequence-diagrams.git" }
+          - { repo: "https://github.com/kurron/lazybones-experiment.git", dest: "lazybones-experiment.git" }
+          - { repo: "https://github.com/kurron/packer-experiment.git", dest: "packer-experiment.git" }
+          - { repo: "https://github.com/kurron/spring-configuration-files.git", dest: "spring-configuration-files.git" }
+          - { repo: "https://github.com/awslabs/git-secrets.git", dest: "git-secrets.git" }
+     - shell: cd /home/vagrant/GitHub/git-secrets ; make install
 
-- name: Custom Desktop tweeks
+- name: Privileged Tasks
   hosts: all
   become: True
   tasks:
-      - lineinfile: dest=/etc/environment line='CUSTOM_RON_WAS_HERE=true'
-      - copy: src=files/.gitconfig dest=/home/vagrant/.gitconfig owner=vagrant group=vagrant mode=644 backup=no
-      - lineinfile: dest=/home/vagrant/.bashrc line="set -o vi"
-      - lineinfile: dest=/home/vagrant/.bashrc line="export DOCKER_ID_USER=kurron"
-      - copy: src=files/han-solo.png dest=/home/vagrant/.face owner=vagrant group=vagrant backup=no mode=644
-      - file: path=/home/vagrant/.config/xfce4/terminal state=directory group=vagrant owner=vagrant
-      - copy: src=files/terminalrc dest=/home/vagrant/.config/xfce4/terminal/terminalrc owner=vagrant group=vagrant backup=no mode=644
-      - lineinfile: dest=/etc/hosts line='192.168.1.229 atlantis'
-      - lineinfile: dest=/etc/hosts line='192.168.1.222 batcave'
-      - lineinfile: dest=/etc/hosts line='192.168.1.233 bifrost'
-      - lineinfile: dest=/etc/hosts line='192.168.1.227 stargate'
-      - lineinfile: dest=/etc/hosts line='192.168.1.236 openvpn'
-#     - copy: src=files/01proxy dest=/etc/apt/apt.conf.d/01proxy owner=root group=root mode=644 backup=no
-      - file: path=/home/vagrant/bin owner=vagrant group=vagrant state=directory mode=755
       - hostname: name=kal-el
-#     - lineinfile: 'dest=/home/vagrant/.bashrc line=export GRADLE_OPTS="-Xmx512m -Dorg.gradle.jvmargs='-Xmx512m -XX:MaxPermSize=128m'"'
-      - lineinfile: dest=/etc/hosts line='127.0.0.1 kal-el'
-      - git: repo=https://github.com/kurron/jvm-development-environment.git dest=/home/vagrant/GitHub/jvm-development-environment
-      - git: repo=https://github.com/kurron/ansible-pull-development.git dest=/home/vagrant/GitHub/ansible-pull-development
-      - git: repo=https://github.com/kurron/ansible-pull-docker.git dest=/home/vagrant/GitHub/ansible-pull-docker
-      - git: repo=https://github.com/kurron/ansible-pull-operations.git dest=/home/vagrant/GitHub/ansible-pull-operations
-      - git: repo=https://github.com/kurron/ansible-pull-transparent.git dest=/home/vagrant/GitHub/ansible-pull-transparent
-      - git: repo=https://github.com/kurron/ansible-pull-desktop-tweaks.git dest=/home/vagrant/GitHub/ansible-pull-desktop-tweaks
-      - git: repo=https://github.com/kurron/ansible-pull-server-tweaks.git dest=/home/vagrant/GitHub/ansible-pull-server-tweaks
-      - git: repo=https://github.com/kurron/scripts.git dest=/home/vagrant/GitHub/scripts
-      - git: repo=https://github.com/kurron/docker-oracle-jdk-8.git dest=/home/vagrant/GitHub/docker-oracle-jdk-8
-      - git: repo=https://github.com/kurron/sequence-diagrams.git dest=/home/vagrant/GitHub/sequence-diagrams
-      - git: repo=https://github.com/kurron/lazybones-experiment.git dest=/home/vagrant/GitHub/lazybones-experiment
-      - git: repo=https://github.com/kurron/packer-experiment.git dest=/home/vagrant/GitHub/packer-experiment
-      - git: repo=https://github.com/awslabs/git-secrets.git dest=/home/vagrant/GitHub/git-secrets
-      - git: repo=https://github.com/kurron/spring-configuration-files.git dest=/home/vagrant/GitHub/spring-configuration-files
-      - file: path=/home/vagrant owner=vagrant group=vagrant recurse=true state=directory
-      - shell: cd /home/vagrant/GitHub/git-secrets ; make install
+      - lineinfile:
+            dest: /etc/hosts
+            line: "{{ item }}"
+        with_items:
+          - '192.168.1.229 atlantis'
+          - '192.168.1.222 batcave'
+          - '192.168.1.233 bifrost'
+          - '192.168.1.227 stargate'
+          - '192.168.1.236 openvpn'
+          - '127.0.0.1 kal-el'
+
+- name: Privileged Tasks
+  hosts: all
+  become: True
+  tasks:
+
+- name: Tools (common)
+  hosts: all
+  become: True
+  tasks:
+      - package:
+            name: "{{ item }}"
+            state: latest
+      with_items:
+      - tree
+      - tmux
+      - sysstat
+      - iotop
+      - iftop
+      - wireshark
 
 - name: Tools (Ubuntu)
   hosts: Ubuntu
   become: True
   tasks:
-      - apt: name=tree state=latest
-      - apt: name=tmux state=latest
-      - apt: name=sysstat state=latest
-      - apt: name=iotop state=latest
-      - apt: name=iftop state=latest
-      - apt: name=wireshark state=latest
-      - apt: name=chromium-browser state=latest
-      - apt: name=imagemagick state=latest
-      - apt: name=gtk-recordmydesktop state=latest
-      - apt: name=mplayer state=latest
+      apt:
+          name: "{{ item }}"
+          state: latest
+      with_items:
+        - chromium-browser
+        - imagemagick
+        - gtk-recordmydesktop
+        - mplayer
 
 - name: Tools (CentOS)
   hosts: CentOS
   become: True
   tasks:
-      - yum: name=tree state=latest
-      - yum: name=tmux state=latest
-      - yum: name=sysstat state=latest
-      - yum: name=iotop state=latest
-      - yum: name=iftop state=latest
-      - yum: name=wireshark state=latest
-#     - apt: name=chromium-browser state=latest
-      - yum: name=ImageMagick state=latest
-      - yum: name=recordmydesktop state=latest
-#     - apt: name=mplayer state=latest
+      - yum:
+            name: "{{ item }}"
+            state: latest
+        with_items:
+          - chromium
+          - ImageMagick
+          - recordmydesktop
+
+- name: Tools (Fedora)
+  hosts: Fedora
+  become: True
+  tasks:
+      - yum:
+            name: "{{ item }}"
+            state: latest
+        with_items:
+          - chromium
+          - ImageMagick
+          - recordmydesktop
