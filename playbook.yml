@@ -36,14 +36,14 @@
             dest: "/home/vagrant/GitHub/{{ item.dest }}"
         with_items:
           - { repo: "https://github.com/kurron/jvm-development-environment.git", dest: "jvm-development-environment" }
-          - { repo: "https://github.com/kurron/ansible-pull-desktop-tweaks.git", dest: "ansible-pull-desktop-tweaks.git" }
-          - { repo: "https://github.com/kurron/scripts.git", dest: "scripts.git" }
-          - { repo: "https://github.com/kurron/docker-oracle-jdk-8.git", dest: "docker-oracle-jdk-8.git" }
-          - { repo: "https://github.com/kurron/sequence-diagrams.git", dest: "sequence-diagrams.git" }
-          - { repo: "https://github.com/kurron/lazybones-experiment.git", dest: "lazybones-experiment.git" }
-          - { repo: "https://github.com/kurron/packer-experiment.git", dest: "packer-experiment.git" }
-          - { repo: "https://github.com/kurron/spring-configuration-files.git", dest: "spring-configuration-files.git" }
-          - { repo: "https://github.com/awslabs/git-secrets.git", dest: "git-secrets.git" }
+          - { repo: "https://github.com/kurron/ansible-pull-desktop-tweaks.git", dest: "ansible-pull-desktop-tweaks" }
+          - { repo: "https://github.com/kurron/scripts.git", dest: "scripts" }
+          - { repo: "https://github.com/kurron/docker-oracle-jdk-8.git", dest: "docker-oracle-jdk-8" }
+          - { repo: "https://github.com/kurron/sequence-diagrams.git", dest: "sequence-diagrams" }
+          - { repo: "https://github.com/kurron/lazybones-experiment.git", dest: "lazybones-experiment" }
+          - { repo: "https://github.com/kurron/packer-experiment.git", dest: "packer-experiment" }
+          - { repo: "https://github.com/kurron/spring-configuration-files.git", dest: "spring-configuration-files" }
+          - { repo: "https://github.com/awslabs/git-secrets.git", dest: "git-secrets" }
 #     - shell: "cd {{ansible_user_dir}}/GitHub/git-secrets ; make install"
 
 - name: Privileged Tasks
