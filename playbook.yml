@@ -11,6 +11,16 @@
   become: False
   tasks:
       - copy:
+            src: templates/.bash_profile.j2
+            dest: "/home/vagrant/.bash_profile"
+            backup: no
+        when: ansible_distribution == "Ubuntu"
+      - copy:
+            src: templates/.bash_profile.j2
+            dest: "/home/vagrant/.bashrc"
+            backup: no
+        when: ansible_distribution == "Fedora"
+      - copy:
             src: files/.gitconfig
             dest: "/home/vagrant/.gitconfig"
             backup: no
@@ -28,9 +38,6 @@
       - file:
             path: "/home/vagrant/bin"
             state: directory
-      - lineinfile:
-            dest: "/home/vagrant/.bashrc"
-            line: "set -o vi"
       - git:
             repo: "{{ item.repo }}"
             dest: "/home/vagrant/GitHub/{{ item.dest }}"
