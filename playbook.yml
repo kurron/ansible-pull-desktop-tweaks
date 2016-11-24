@@ -12,7 +12,7 @@
   tasks:
       - copy:
             src: templates/.bash_profile.j2
-            dest: "/home/vagrant/.bash_profile"
+            dest: "/home/vagrant/.bash_aliases"
             backup: no
         when: ansible_distribution == "Ubuntu"
       - copy:
