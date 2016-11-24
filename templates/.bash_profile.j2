@@ -1,1 +1,25 @@
 set -o vi
+
+# Atlas
+export ATLAS_TOKEN={{ ansible_env.ATLAS_TOKEN }}
+
+# Bintray
+export BINTRAY_USER={{ ansible_env.BINTRAY_USER }}
+export BINTRAY_API_KEY={{ ansible_env.BINTRAY_API_KEY }}
+
+# Artifact cache
+export ARTIFACTORY={{ ansible_env.ARTIFACTORY }}
+
+# Loggly
+export LOGGLY_TOKEN={{ ansible_env.LOGGLY_TOKEN }}
+
+# Datadog
+export DATADOG_TOKEN={{ ansible_env.DATADOG_TOKEN }}
+
+# Transparent Keys
+export AWS_REGION={{ ansible_env.AWS_REGION }}
+export AWS_ACCESS_KEY_ID={{ ansible_env.AWS_ACCESS_KEY }}
+export AWS_SECRET_ACCESS_KEY={{ ansible_env.AWS_SECRET_ACCESS_KEY }}
+
+# MongoDB MMS Key
+export MMS_API_KEY={{ ansible_env.MMS_API_KEY }}
