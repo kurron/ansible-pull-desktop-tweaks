@@ -10,12 +10,12 @@
   hosts: all
   become: False
   tasks:
-      - copy:
+      - template:
             src: templates/.bash_profile.j2
             dest: "/home/vagrant/.bash_aliases"
             backup: no
         when: ansible_distribution == "Ubuntu"
-      - copy:
+      - template:
             src: templates/.bash_profile.j2
             dest: "/home/vagrant/.bashrc"
             backup: no
