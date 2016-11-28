@@ -78,6 +78,10 @@
           - { repo: "https://github.com/kurron/ansible-role-cpp-developer.git", dest: "ansible-role-cpp-developer" }
           - { repo: "https://github.com/kurron/ansible-role-aws.git", dest: "ansible-role-aws" }
           - { repo: "https://github.com/kurron/ansible-role-atlassian.git", dest: "ansible-role-atlassian" }
+          - { repo: "https://github.com/kurron/packer-xubuntu-xenial.git", dest: "packer-xubuntu-xenial" }
+          - { repo: "https://github.com/kurron/packer-xedhat-maipo.git", dest: "packer-xedhat-maipo" }
+          - { repo: "https://github.com/kurron/packer-server-xenial.git", dest: "packer-server-xenial" }
+          - { repo: "https://github.com/kurron/packer-server-maipo.git", dest: "packer-server-maipo" }
 #     - shell: "cd {{ansible_user_dir}}/GitHub/git-secrets ; make install"
 
 - name: Privileged Tasks
