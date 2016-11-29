@@ -19,7 +19,7 @@
             src: templates/.bash_profile.j2
             dest: "/home/vagrant/.bashrc"
             backup: no
-        when: ansible_distribution == "Fedora"
+        when: (ansible_distribution == "Fedora") OR (ansible_distribution == "RedHat")
       - copy:
             src: files/.gitconfig
             dest: "/home/vagrant/.gitconfig"
