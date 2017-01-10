@@ -1,0 +1,122 @@
+Host alpha mysql-green
+  User ec2-user
+  HostName ip-10-0-2-177.us-west-2.compute.internal
+  IdentityFile ~/Bitbucket/Operations/aws-ssh-keys/us-west-2/asgard-lite-test.pem
+  ProxyCommand ssh bastion-green -W %h:%p
+  LocalForward 3306 127.0.0.1:3306
+  ExitOnForwardFailure yes
+ 
+Host bravo rabbitmq-green
+  User ec2-user
+  HostName ip-10-0-2-134.us-west-2.compute.internal
+  IdentityFile ~/Bitbucket/Operations/aws-ssh-keys/us-west-2/asgard-lite-test.pem
+  ProxyCommand ssh bastion-green -W %h:%p
+  LocalForward 15672 127.0.0.1:15672
+  ExitOnForwardFailure yes
+ 
+Host charlie mongodb-green
+  User ec2-user
+  HostName ip-10-0-2-216.us-west-2.compute.internal
+  IdentityFile ~/Bitbucket/Operations/aws-ssh-keys/us-west-2/asgard-lite-test.pem
+  ProxyCommand ssh bastion-green -W %h:%p
+  LocalForward 27017 127.0.0.1:27017
+  ExitOnForwardFailure yes
+ 
+Host delta docker-green
+  User ec2-user
+  HostName ip-10-0-2-51.us-west-2.compute.internal
+  IdentityFile ~/Bitbucket/Operations/aws-ssh-keys/us-west-2/asgard-lite-test.pem
+  ProxyCommand ssh bastion-green -W %h:%p
+ 
+Host echo replay-green
+  User ec2-user
+  HostName ip-10-0-2-9.us-west-2.compute.internal
+  IdentityFile ~/Bitbucket/Operations/aws-ssh-keys/us-west-2/asgard-lite-test.pem
+  ProxyCommand ssh bastion-green -W %h:%p
+  LocalForward 15672 127.0.0.1:15672
+  LocalForward 27017 127.0.0.1:27017
+  ExitOnForwardFailure yes
+ 
+Host foxtrot redis-green
+  User ec2-user
+  HostName ip-10-0-2-12.us-west-2.compute.internal
+  IdentityFile ~/Bitbucket/Operations/aws-ssh-keys/us-west-2/asgard-lite-test.pem
+  ProxyCommand ssh bastion-green -W %h:%p
+  LocalForward 6379 127.0.0.1:6379
+  ExitOnForwardFailure yes
+ 
+Host gulf elk-green
+  User ec2-user
+  HostName ip-10-0-2-11.us-west-2.compute.internal
+  IdentityFile ~/Bitbucket/Operations/aws-ssh-keys/us-west-2/asgard-lite-test.pem
+  ProxyCommand ssh bastion-green -W %h:%p
+  LocalForward 5601 127.0.0.1:5601
+  ExitOnForwardFailure yes
+
+Host hotel bastion-green
+  User ec2-user
+  HostName ec2-35-164-251-0.us-west-2.compute.amazonaws.com
+  IdentityFile ~/Bitbucket/Operations/aws-ssh-keys/us-west-2/asgard-lite-test.pem
+  ForwardAgent yes
+ 
+Host zulu mysql-red
+  User ec2-user
+  HostName ip-10-0-4-186.us-west-2.compute.internal
+  IdentityFile ~/Bitbucket/Operations/aws-ssh-keys/us-west-2/asgard-lite-test.pem
+  ProxyCommand ssh bastion-red -W %h:%p
+  LocalForward 3306 127.0.0.1:3306
+  ExitOnForwardFailure yes
+ 
+Host yankee rabbitmq-red
+  User ec2-user
+  HostName ip-10-0-4-251.us-west-2.compute.internal
+  IdentityFile ~/Bitbucket/Operations/aws-ssh-keys/us-west-2/asgard-lite-test.pem
+  ProxyCommand ssh bastion-red -W %h:%p
+  LocalForward 15672 127.0.0.1:15672
+  ExitOnForwardFailure yes
+ 
+Host xray mongodb-red
+  User ec2-user
+  HostName ip-10-0-4-112.us-west-2.compute.internal
+  IdentityFile ~/Bitbucket/Operations/aws-ssh-keys/us-west-2/asgard-lite-test.pem
+  ProxyCommand ssh bastion-red -W %h:%p
+  LocalForward 27017 127.0.0.1:27017
+  ExitOnForwardFailure yes
+ 
+Host whiskey docker-red
+  User ec2-user
+  HostName ip-10-0-4-161.us-west-2.compute.internal
+  IdentityFile ~/Bitbucket/Operations/aws-ssh-keys/us-west-2/asgard-lite-test.pem
+  ProxyCommand ssh bastion-red -W %h:%p
+ 
+Host victor replay-red
+  User ec2-user
+  HostName ip-10-0-4-95.us-west-2.compute.internal
+  IdentityFile ~/Bitbucket/Operations/aws-ssh-keys/us-west-2/asgard-lite-test.pem
+  ProxyCommand ssh bastion-red -W %h:%p
+  LocalForward 15672 127.0.0.1:15672
+  LocalForward 27017 127.0.0.1:27017
+  ExitOnForwardFailure yes
+ 
+Host uniform redis-red
+  User ec2-user
+  HostName ip-10-0-4-121.us-west-2.compute.internal
+  IdentityFile ~/Bitbucket/Operations/aws-ssh-keys/us-west-2/asgard-lite-test.pem
+  ProxyCommand ssh bastion-red -W %h:%p
+  LocalForward 6379 127.0.0.1:6379
+  ExitOnForwardFailure yes
+ 
+Host tango elk-red
+  User ec2-user
+  HostName ip-10-0-4-244.us-west-2.compute.internal
+  IdentityFile ~/Bitbucket/Operations/aws-ssh-keys/us-west-2/asgard-lite-test.pem
+  ProxyCommand ssh bastion-red -W %h:%p
+  LocalForward 5601 127.0.0.1:5601
+  ExitOnForwardFailure yes
+
+Host sierra bastion-red
+  User ec2-user
+  HostName ec2-54-200-235-127.us-west-2.compute.amazonaws.com
+  IdentityFile ~/Bitbucket/Operations/aws-ssh-keys/us-west-2/asgard-lite-test.pem
+  ForwardAgent yes
+ 
