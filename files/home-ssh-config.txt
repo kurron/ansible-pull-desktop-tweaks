@@ -22,6 +22,12 @@ Host alfheim
   ProxyCommand ssh -W %h:%p bastion
   ExitOnForwardFailure yes
 
+Host midgard
+  User pi
+  HostName 192.168.1.236
+  ProxyCommand ssh -W %h:%p bastion
+  ExitOnForwardFailure yes
+
 Host vanaheim
   User rkurr
   HostName 192.168.1.240
@@ -34,7 +40,7 @@ Host asgard
   ProxyCommand ssh -W %h:%p bastion
   ExitOnForwardFailure yes
 
-Host midgard bastion
+Host bastion
   User pi
   HostName rkurr.duckdns.org
   ForwardAgent yes
