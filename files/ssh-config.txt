@@ -73,7 +73,7 @@ Host 10.0.4.*
 
 Host zulu mysql-red
   User ec2-user
-  HostName ip-10-0-4-186.us-west-2.compute.internal
+  HostName ip-10-0-4-127.us-west-2.compute.internal
   IdentityFile ~/Bitbucket/Operations/aws-ssh-keys/us-west-2/asgard-lite-test.pem
   ProxyCommand ssh -W %h:%p bastion-red
   LocalForward 3306 127.0.0.1:3306
