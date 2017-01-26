@@ -131,3 +131,71 @@ Host sierra bastion-red
   HostName ec2-35-161-126-133.us-west-2.compute.amazonaws.com
   IdentityFile ~/Bitbucket/Operations/aws-ssh-keys/us-west-2/asgard-lite-test.pem
   ForwardAgent yes
+
+
+  Host 10.0.0.*
+    User ec2-user
+    IdentityFile ~/Bitbucket/Operations/aws-ssh-keys/us-west-2/asgard-lite-test.pem
+    ProxyCommand ssh bastion-blue -W %h:%p
+    ExitOnForwardFailure yes
+
+  Host india mysql-blue
+    User ec2-user
+    HostName ip-10-0-0-201.us-west-2.compute.internal
+    IdentityFile ~/Bitbucket/Operations/aws-ssh-keys/us-west-2/asgard-lite-test.pem
+    ProxyCommand ssh -W %h:%p bastion-blue
+    LocalForward 3306 127.0.0.1:3306
+    ExitOnForwardFailure yes
+
+  Host juliett rabbitmq-blue
+    User ec2-user
+    HostName ip-10-0-0-156.us-west-2.compute.internal
+    IdentityFile ~/Bitbucket/Operations/aws-ssh-keys/us-west-2/asgard-lite-test.pem
+    ProxyCommand ssh -W %h:%p bastion-blue
+    LocalForward 15672 127.0.0.1:15672
+    ExitOnForwardFailure yes
+
+  Host kilo mongodb-blue
+    User ec2-user
+    HostName ip-10-0-0-103.us-west-2.compute.internal
+    IdentityFile ~/Bitbucket/Operations/aws-ssh-keys/us-west-2/asgard-lite-test.pem
+    ProxyCommand ssh -W %h:%p bastion-blue
+    LocalForward 27017 127.0.0.1:27017
+    ExitOnForwardFailure yes
+
+  Host lima docker-blue
+    User ec2-user
+    HostName ip-10-0-0-30.us-west-2.compute.internal
+    IdentityFile ~/Bitbucket/Operations/aws-ssh-keys/us-west-2/asgard-lite-test.pem
+    ProxyCommand ssh -W %h:%p bastion-blue
+
+  Host mike replay-blue
+    User ec2-user
+    HostName ip-10-0-0-230.us-west-2.compute.internal
+    IdentityFile ~/Bitbucket/Operations/aws-ssh-keys/us-west-2/asgard-lite-test.pem
+    ProxyCommand ssh -W %h:%p bastion-blue
+    LocalForward 15672 127.0.0.1:15672
+    LocalForward 27017 127.0.0.1:27017
+    ExitOnForwardFailure yes
+
+  Host november redis-blue
+    User ec2-user
+    HostName ip-10-0-0-84.us-west-2.compute.internal
+    IdentityFile ~/Bitbucket/Operations/aws-ssh-keys/us-west-2/asgard-lite-test.pem
+    ProxyCommand ssh -W %h:%p bastion-blue
+    LocalForward 6379 127.0.0.1:6379
+    ExitOnForwardFailure yes
+
+  Host oscar elk-blue
+    User ec2-user
+    HostName ip-10-0-0-34.us-west-2.compute.internal
+    IdentityFile ~/Bitbucket/Operations/aws-ssh-keys/us-west-2/asgard-lite-test.pem
+    ProxyCommand ssh -W %h:%p bastion-blue
+    LocalForward 5601 127.0.0.1:5601
+    ExitOnForwardFailure yes
+
+  Host papa bastion-blue
+    User ec2-user
+    HostName ec2-35-167-21-63.us-west-2.compute.amazonaws.com
+    IdentityFile ~/Bitbucket/Operations/aws-ssh-keys/us-west-2/asgard-lite-test.pem
+    ForwardAgent yes
