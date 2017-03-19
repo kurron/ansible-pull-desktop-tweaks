@@ -91,6 +91,7 @@
           - { repo: "https://github.com/kurron/packer-xedhat-maipo.git", dest: "packer-xedhat-maipo" }
           - { repo: "https://github.com/kurron/packer-server-xenial.git", dest: "packer-server-xenial" }
           - { repo: "https://github.com/kurron/packer-server-maipo.git", dest: "packer-server-maipo" }
+          - { repo: "https://github.com/kurron/spring-cloud-aws-echo.git", dest: "spring-cloud-aws-echo" }
 
           - { repo: "https://github.com/kurron/cloud-formation-ecs.git", dest: "cloud-formation-ecs" }
           - { repo: "https://github.com/kurron/cloud-formation-rds.git", dest: "cloud-formation-rds" }
