@@ -97,7 +97,7 @@
           - { repo: "https://github.com/kurron/cloud-formation-rds.git", dest: "cloud-formation-rds" }
           - { repo: "https://github.com/kurron/cloud-formation-full-stack.git", dest: "cloud-formation-full-stack" }
           - { repo: "https://github.com/kurron/cloud-formation-mongodb.git", dest: "cloud-formation-mongodb" }
-          - { repo: "https://github.com/kurron/cloud-formation-elasticache.git", dest: "cloud-formation-elasticach" }
+          - { repo: "https://github.com/kurron/cloud-formation-elasticache.git", dest: "cloud-formation-elasticache" }
           - { repo: "https://github.com/kurron/cloud-formation-elasticsearch.git", dest: "cloud-formation-elasticsearch" }
           - { repo: "https://github.com/kurron/cloud-formation-vpc.git", dest: "cloud-formation-vpc" }
           - { repo: "https://github.com/kurron/cloud-formation-elb.git", dest: "cloud-formation-elb" }
