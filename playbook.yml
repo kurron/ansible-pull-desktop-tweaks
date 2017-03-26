@@ -52,6 +52,9 @@
           - { repo: "https://github.com/kurron/lazybones-experiment.git", dest: "lazybones-experiment" }
           - { repo: "https://github.com/kurron/packer-experiment.git", dest: "packer-experiment" }
           - { repo: "https://github.com/kurron/spring-configuration-files.git", dest: "spring-configuration-files" }
+          - { repo: "https://github.com/kurron/tools-java.git", dest: "tools-java" }
+          - { repo: "https://github.com/kurron/tools-groovy.git", dest: "tools-groovy" }
+
           - { repo: "https://github.com/awslabs/git-secrets.git", dest: "git-secrets" }
 
           - { repo: "https://github.com/kurron/ansible-role-jdk.git", dest: "ansible-role-jdk" }
