@@ -108,6 +108,8 @@
           - { repo: "https://github.com/kurron/cloud-formation-cdn.git", dest: "cloud-formation-cdn" }
           - { repo: "https://github.com/kurron/cloud-formation-waf.git", dest: "cloud-formation-waf" }
           - { repo: "https://github.com/kurron/cloud-formation-ecs-service.git", dest: "cloud-formation-ecs-service" }
+
+          - { repo: "https://github.com/kurron/asciinema-screencasts.git", dest: "asciinema-screencasts" }
 #     - shell: "cd {{ansible_user_dir}}/GitHub/git-secrets ; make install"
 
 - name: Privileged Tasks
