@@ -145,7 +145,7 @@
 #         - sysstat
 #         - iotop
 #         - iftop
-          - wireshark
+#         - wireshark
 
 - name: Tools (Ubuntu)
 # hosts: Ubuntu
