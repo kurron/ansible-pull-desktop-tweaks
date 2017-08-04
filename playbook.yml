@@ -141,15 +141,14 @@
             state: latest
         with_items:
           - tree
-          - tmux
-          - sysstat
-          - iotop
-          - iftop
+#         - tmux
+#         - sysstat
+#         - iotop
+#         - iftop
           - wireshark
 
 - name: Tools (Ubuntu)
-# hosts: Ubuntu
-  hosts: none
+  hosts: Ubuntu
   become: True
   tasks:
       - apt:
