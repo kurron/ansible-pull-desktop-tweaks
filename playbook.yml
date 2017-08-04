@@ -113,7 +113,8 @@
 #     - shell: "cd {{ansible_user_dir}}/GitHub/git-secrets ; make install"
 
 - name: Privileged Tasks
-  hosts: all
+# hosts: all
+  hosts: none
   become: True
   tasks:
       - hostname: name=kal-el
@@ -133,7 +134,8 @@
           - '127.0.0.1 kal-el'
 
 - name: Tools (common)
-  hosts: all
+# hosts: all
+  hosts: none
   become: True
   tasks:
       - package:
@@ -148,7 +150,8 @@
           - wireshark
 
 - name: Tools (Ubuntu)
-  hosts: Ubuntu
+# hosts: Ubuntu
+  hosts: none
   become: True
   tasks:
       - apt:
