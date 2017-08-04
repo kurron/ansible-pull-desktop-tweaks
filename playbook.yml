@@ -148,7 +148,8 @@
           - wireshark
 
 - name: Tools (Ubuntu)
-  hosts: Ubuntu
+# hosts: Ubuntu
+  hosts: none
   become: True
   tasks:
       - apt:
