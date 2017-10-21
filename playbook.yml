@@ -93,6 +93,7 @@
 
           - { repo: "https://github.com/kurron/terraform-aws-alb.git", dest: "terraform-aws-alb" }
           - { repo: "https://github.com/kurron/terraform-aws-alb-service-attachment.git", dest: "terraform-aws-alb-service-attachment" }
+          - { repo: "https://github.com/kurron/terraform-aws-ec2.git", dest: "terraform-aws-ec2" }
           - { repo: "https://github.com/kurron/terraform-aws-security-groups.git", dest: "terraform-aws-security-groups" }
           - { repo: "https://github.com/kurron/terraform-aws-alb-target-group.git", dest: "terraform-aws-alb-target-group" }
           - { repo: "https://github.com/kurron/terraform-aws-iam.git", dest: "terraform-aws-iam" }
