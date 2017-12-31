@@ -1,5 +1,11 @@
 #!/usr/bin/env ansible-playbook
 
+---
+- hosts: localhost
+  gather_facts: yes
+  roles:
+      - kurron.cpp-developer
+
 - name: Gather prerequisites
   hosts: all
   gather_facts: True
