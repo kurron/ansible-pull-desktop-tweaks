@@ -58,39 +58,44 @@
 
           - { repo: "https://github.com/awslabs/git-secrets.git", dest: "git-secrets" }
 
-          - { repo: "https://github.com/kurron/ansible-role-jdk.git", dest: "ansible-role-jdk" }
-          - { repo: "https://github.com/kurron/ansible-role-software-developer.git", dest: "ansible-role-software-developer" }
-          - { repo: "https://github.com/kurron/ansible-role-hashicorp.git", dest: "ansible-role-hashicorp" }
-          - { repo: "https://github.com/kurron/ansible-role-block-device.git", dest: "ansible-role-block-device" }
-          - { repo: "https://github.com/kurron/ansible-role-jvm-developer.git", dest: "ansible-role-jvm-developer" }
-          - { repo: "https://github.com/kurron/ansible-role-sql-developer.git", dest: "ansible-role-sql-developer" }
-          - { repo: "https://github.com/kurron/ansible-role-javascript-developer.git", dest: "ansible-role-javascript-developer" }
-          - { repo: "https://github.com/kurron/ansible-role-docker-host.git", dest: "ansible-role-docker-host" }
-          - { repo: "https://github.com/kurron/ansible-role-cpp-developer.git", dest: "ansible-role-cpp-developer" }
-          - { repo: "https://github.com/kurron/ansible-role-mongodb.git", dest: "ansible-role-mongodb" }
-          - { repo: "https://github.com/kurron/ansible-role-os-limits.git", dest: "ansible-role-os-limits" }
-          - { repo: "https://github.com/kurron/ansible-role-artifactory.git", dest: "ansible-role-artifactory" }
-          - { repo: "https://github.com/kurron/ansible-role-vpc.git", dest: "ansible-role-vpc" }
-          - { repo: "https://github.com/kurron/ansible-role-node-js.git", dest: "ansible-role-node-js" }
           - { repo: "https://github.com/kurron/ansible-role-atlassian.git", dest: "ansible-role-atlassian" }
-          - { repo: "https://github.com/kurron/ansible-role-logfaces.git", dest: "ansible-role-logfaces" }
-          - { repo: "https://github.com/kurron/ansible-role-python-developer.git", dest: "ansible-role-python-developer" }
-          - { repo: "https://github.com/kurron/ansible-role-mysql.git", dest: "ansible-role-mysql" }
-          - { repo: "https://github.com/kurron/ansible-role-base.git", dest: "ansible-role-base" }
+          - { repo: "https://github.com/kurron/ansible-role-artifactory.git", dest: "ansible-role-artifactory" }
           - { repo: "https://github.com/kurron/ansible-role-aws.git", dest: "ansible-role-aws" }
-          - { repo: "https://github.com/kurron/ansible-role-plex.git", dest: "ansible-role-plex" }
-          - { repo: "https://github.com/kurron/ansible-role-time.git", dest: "ansible-role-time" }
-          - { repo: "https://github.com/kurron/ansible-role-transparent-huge-pages.git", dest: "ansible-role-transparent-huge-pages" }
-          - { repo: "https://github.com/kurron/ansible-role-virtualbox.git", dest: "ansible-role-virtualbox" }
-          - { repo: "https://github.com/kurron/ansible-role-operations.git", dest: "ansible-role-operations" }
-          - { repo: "https://github.com/kurron/ansible-role-rabbitmq.git", dest: "ansible-role-rabbitmq" }
+          - { repo: "https://github.com/kurron/ansible-role-base.git", dest: "ansible-role-base" }
+          - { repo: "https://github.com/kurron/ansible-role-block-device.git", dest: "ansible-role-block-device" }
+          - { repo: "https://github.com/kurron/ansible-role-cpp-developer.git", dest: "ansible-role-cpp-developer" }
+          - { repo: "https://github.com/kurron/ansible-role-docker-host.git", dest: "ansible-role-docker-host" }
+          - { repo: "https://github.com/kurron/ansible-role-docker-keep-alive.git", dest: "ansible-role-docker-keep-alive-host" }
+          - { repo: "https://github.com/kurron/ansible-role-dot-net-developer.git", dest: "ansible-role-dot-net-developer" }
+          - { repo: "https://github.com/kurron/ansible-role-dsl-developer.git", dest: "ansible-role-dsl-developer" }
           - { repo: "https://github.com/kurron/ansible-role-elastic-stack.git", dest: "ansible-role-elastic-stack" }
+          - { repo: "https://github.com/kurron/ansible-role-go-developer.git", dest: "ansible-role-go-developer" }
+          - { repo: "https://github.com/kurron/ansible-role-hashicorp.git", dest: "ansible-role-hashicorp" }
+          - { repo: "https://github.com/kurron/ansible-role-javascript-developer.git", dest: "ansible-role-javascript-developer" }
+          - { repo: "https://github.com/kurron/ansible-role-jdk.git", dest: "ansible-role-jdk" }
+          - { repo: "https://github.com/kurron/ansible-role-jvm-developer.git", dest: "ansible-role-jvm-developer" }
+          - { repo: "https://github.com/kurron/ansible-role-jvpn.git", dest: "ansible-role-jvpn" }
+          - { repo: "https://github.com/kurron/ansible-role-logfaces.git", dest: "ansible-role-logfaces" }
+          - { repo: "https://github.com/kurron/ansible-role-logstash.git", dest: "ansible-role-logstash" }
+          - { repo: "https://github.com/kurron/ansible-role-node-js.git", dest: "ansible-role-node-js" }
+          - { repo: "https://github.com/kurron/ansible-role-mongodb.git", dest: "ansible-role-mongodb" }
+          - { repo: "https://github.com/kurron/ansible-role-mysql.git", dest: "ansible-role-mysql" }
+          - { repo: "https://github.com/kurron/ansible-role-operations.git", dest: "ansible-role-operations" }
+          - { repo: "https://github.com/kurron/ansible-role-os-limits.git", dest: "ansible-role-os-limits" }
+          - { repo: "https://github.com/kurron/ansible-role-plex.git", dest: "ansible-role-plex" }
+          - { repo: "https://github.com/kurron/ansible-role-php-developer.git", dest: "ansible-role-php-developer" }
+          - { repo: "https://github.com/kurron/ansible-role-python-developer.git", dest: "ansible-role-python-developer" }
+          - { repo: "https://github.com/kurron/ansible-role-rabbitmq.git", dest: "ansible-role-rabbitmq" }
           - { repo: "https://github.com/kurron/ansible-role-redis.git", dest: "ansible-role-redis" }
           - { repo: "https://github.com/kurron/ansible-role-resilio-sync.git", dest: "ansible-role-resilio-sync" }
           - { repo: "https://github.com/kurron/ansible-role-rsync.git", dest: "ansible-role-rsync" }
           - { repo: "https://github.com/kurron/ansible-role-ruby-developer.git", dest: "ansible-role-ruby-developer" }
-          - { repo: "https://github.com/kurron/ansible-role-php-developer.git", dest: "ansible-role-php-developer" }
-          - { repo: "https://github.com/kurron/ansible-role-dsl-developer.git", dest: "ansible-role-dsl-developer" }
+          - { repo: "https://github.com/kurron/ansible-role-software-developer.git", dest: "ansible-role-software-developer" }
+          - { repo: "https://github.com/kurron/ansible-role-sql-developer.git", dest: "ansible-role-sql-developer" }
+          - { repo: "https://github.com/kurron/ansible-role-time.git", dest: "ansible-role-time" }
+          - { repo: "https://github.com/kurron/ansible-role-transparent-huge-pages.git", dest: "ansible-role-transparent-huge-pages" }
+          - { repo: "https://github.com/kurron/ansible-role-vpc.git", dest: "ansible-role-vpc" }
+          - { repo: "https://github.com/kurron/ansible-role-virtualbox.git", dest: "ansible-role-virtualbox" }
 
           - { repo: "https://github.com/kurron/terraform-aws-alb.git", dest: "terraform-aws-alb" }
           - { repo: "https://github.com/kurron/terraform-aws-alb-service-attachment.git", dest: "terraform-aws-alb-service-attachment" }
