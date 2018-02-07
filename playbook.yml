@@ -105,13 +105,17 @@
           - { repo: "https://github.com/kurron/terraform-aws-api-gateway-binding.git", dest: "terraform-aws-api-gateway-binding" }
           - { repo: "https://github.com/kurron/terraform-aws-api-gateway-deployment.git", dest: "terraform-aws-api-gateway-deployment" }
           - { repo: "https://github.com/kurron/terraform-aws-api-key.git", dest: "terraform-aws-api-key" }
+          - { repo: "https://github.com/kurron/terraform-aws-archiving-s3.git", dest: "terraform-aws-archiving-s3" }
           - { repo: "https://github.com/kurron/terraform-aws-bastion.git", dest: "terraform-aws-bastion" }
           - { repo: "https://github.com/kurron/terraform-aws-cloudwatch-log.git", dest: "terraform-aws-cloudwatch-log" }
           - { repo: "https://github.com/kurron/terraform-aws-ec2.git", dest: "terraform-aws-ec2" }
           - { repo: "https://github.com/kurron/terraform-aws-ec2-park.git", dest: "terraform-aws-ec2-park" }
           - { repo: "https://github.com/kurron/terraform-aws-ec2-spot.git", dest: "terraform-aws-spot-park" }
           - { repo: "https://github.com/kurron/terraform-aws-ecs-service.git", dest: "terraform-aws-ecs-service" }
+          - { repo: "https://github.com/kurron/terraform-aws-elasticache-redis.git", dest: "terraform-aws-elasticache-redis" }
+          - { repo: "https://github.com/kurron/terraform-aws-expiring-s3.git", dest: "terraform-aws-expiring-s3" }
           - { repo: "https://github.com/kurron/terraform-aws-iam.git", dest: "terraform-aws-iam" }
+          - { repo: "https://github.com/kurron/terraform-aws-rds-mysql.git", dest: "terraform-aws-rds-mysql" }
           - { repo: "https://github.com/kurron/terraform-aws-security-groups.git", dest: "terraform-aws-security-groups" }
           - { repo: "https://github.com/kurron/terraform-aws-vpc.git", dest: "terraform-aws-vpc" }
 
