@@ -1,20 +1,20 @@
-#Overview
+# Overview
 This project is a sub-project of the [JVM Development Environment](https://github.com/kurron/jvm-development-environment). 
 The Ansible plays described here will be applied to the Vagrant environment being built.  The purpose of this project 
 is to install a variety of custom tools and conveniences into the Vagrant box.
 
-#Prerequisites
+# Prerequisites
 Nothing additional to what is required by the JVM Development Environment project. 
 
-#Building
+# Building
 All the components of the environment live in repositories on the internet so there is nothing to build.
 
-#Installation
+# Installation
 This project is intended to be invoked by the JVM Development Environment project so there is no installation step.
 
-#Tips and Tricks
+# Tips and Tricks
 
-##Applied Conveniences
+## Applied Conveniences
 
 * set up Git credentials
 * tweak `.bashrc`
@@ -23,10 +23,10 @@ This project is intended to be invoked by the JVM Development Environment projec
 * check out frequently edited Git projects
 * install tools I like, like [WireShark](https://www.wireshark.org/) and [Chromium](https://www.chromium.org/)
 
-#Troubleshooting
+# Troubleshooting
 
-#License and Credits
+# License and Credits
 This project is licensed under the [Apache License Version 2.0, January 2004](http://www.apache.org/licenses/).
 
-#List of Changes
+# List of Changes
 
