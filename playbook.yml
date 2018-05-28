@@ -165,10 +165,10 @@
   tasks:
       - command: "snap install {{ item }}"
         loop:
-          - vscode
-          - sublime-text
-          - atom
+          - --classic vscode
+          - --classic sublime-text
+          - --classic atom
           - chromium
           - brave
-          - datagrip
-          - goland
+          - --classic datagrip
+          - --classic goland
