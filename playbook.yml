@@ -1,26 +1,14 @@
 #!/usr/bin/env ansible-playbook
 
 ---
-- name: Gather prerequisites
-  hosts: all
-  gather_facts: True
-  tasks:
-    - group_by: key={{ ansible_distribution }}
-
 - name: Non-Privileged Tasks
-  hosts: all
+  hosts: localhost
   become: False
   tasks:
       - template:
             src: templates/.bash_profile.j2
             dest: "/home/vagrant/.bash_aliases"
             backup: no
-        when: ansible_distribution == "Ubuntu"
-      - template:
-            src: templates/.bash_profile.j2
-            dest: "/home/vagrant/.bashrc"
-            backup: no
-        when: (ansible_distribution == "Fedora") or (ansible_distribution == "RedHat")
       - copy:
             src: files/.gitconfig
             dest: "/home/vagrant/.gitconfig"
@@ -42,7 +30,7 @@
       - git:
             repo: "{{ item.repo }}"
             dest: "/home/vagrant/GitHub/{{ item.dest }}"
-        with_items:
+        loop:
           - { repo: "https://github.com/kurron/ansible-pull-desktop-tweaks.git", dest: "ansible-pull-desktop-tweaks" }
           - { repo: "https://github.com/kurron/ansible-pull-transparent.git", dest: "ansible-pull-transparent" }
           - { repo: "https://github.com/kurron/asciinema-screencasts.git", dest: "asciinema-screencasts" }
@@ -141,14 +129,14 @@
 #     - shell: "cd {{ansible_user_dir}}/GitHub/git-secrets ; make install"
 
 - name: Privileged Tasks
-  hosts: all
+  hosts: localhost
   become: True
   tasks:
       - hostname: name=kal-el
       - lineinfile:
             dest: /etc/hosts
             line: "{{ item }}"
-        with_items:
+        loop:
           - '192.168.1.222 batcave'
           - '192.168.1.227 stargate'
           - '192.168.1.229 atlantis'
@@ -162,65 +150,12 @@
           - '127.0.0.1 kal-el'
 
 - name: Tools (common)
-  hosts: all
+  hosts: localhost
   become: True
   tasks:
       - package:
             name: "{{ item }}"
             state: latest
-        with_items:
+        loop:
           - tree
-#         - tmux
-#         - sysstat
-#         - iotop
-#         - iftop
-#         - wireshark
 
-- name: Tools (Ubuntu)
-# hosts: Ubuntu
-  hosts: none
-  become: True
-  tasks:
-      - apt:
-          name: "{{ item }}"
-          state: latest
-        with_items:
-            - chromium-browser
-            - imagemagick
-            - gtk-recordmydesktop
-            - mplayer
-
-- name: Tools (CentOS)
-  hosts: CentOS
-  become: True
-  tasks:
-      - yum:
-            name: "{{ item }}"
-            state: latest
-        with_items:
-          - chromium
-          - ImageMagick
-          - recordmydesktop
-
-- name: Tools (Fedora)
-  hosts: Fedora
-  become: True
-  tasks:
-      - dnf:
-            name: "{{ item }}"
-            state: latest
-        with_items:
-          - chromium
-          - ImageMagick
-          - recordmydesktop
-
-- name: Set Home Folder Permissions (must be last play)
-  hosts: all
-  become: True
-  tasks:
-    - file:
-          path: /home/vagrant
-          owner: vagrant
-          group: vagrant
-          recurse: true
-          state: directory
