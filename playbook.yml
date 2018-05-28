@@ -163,7 +163,7 @@
   hosts: localhost
   become: True
   tasks:
-      - command: name: "snap install {{ item }}"
+      - command: "snap install {{ item }}"
         loop:
           - vscode
           - sublime-text
