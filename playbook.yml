@@ -158,6 +158,7 @@
             state: latest
         loop:
           - tree
+          - baobab
 
 - name: Snaps
   hosts: localhost
