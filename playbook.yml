@@ -159,3 +159,16 @@
         loop:
           - tree
 
+- name: Snaps
+  hosts: localhost
+  become: True
+  tasks:
+      - command: name: "snap install {{ item }}"
+        loop:
+          - vscode
+          - sublime-text
+          - atom
+          - chromium
+          - brave
+          - datagrip
+          - goland
