@@ -107,8 +107,7 @@
           - { repo: "https://github.com/kurron/terraform-aws-security-groups.git", dest: "terraform-aws-security-groups" }
           - { repo: "https://github.com/kurron/terraform-aws-vpc.git", dest: "terraform-aws-vpc" }
 
-          - { repo: "https://github.com/kurron/packer-server-xenial.git", dest: "packer-server-xenial" }
-          - { repo: "https://github.com/kurron/packer-xubuntu-xenial.git", dest: "packer-xubuntu-xenial" }
+          - { repo: "https://github.com/kurron/packer-xubuntu-bionic.git", dest: "packer-xubuntu-bionic" }
 
           - { repo: "https://github.com/kurron/cloud-formation-ecs.git", dest: "cloud-formation-ecs" }
           - { repo: "https://github.com/kurron/cloud-formation-rds.git", dest: "cloud-formation-rds" }
