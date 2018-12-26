@@ -122,8 +122,13 @@
           - { repo: "https://github.com/kurron/cloud-formation-ecs-service.git", dest: "cloud-formation-ecs-service" }
 
           - { repo: "https://github.com/kurron/docker-azul-jdk-8.git", dest: "docker-azul-jdk-8" }
+          - { repo: "https://github.com/kurron/docker-azul-jdk-9.git", dest: "docker-azul-jdk-9" }
+          - { repo: "https://github.com/kurron/docker-azul-jdk-10.git", dest: "docker-azul-jdk-10" }
+          - { repo: "https://github.com/kurron/docker-azul-jdk-11.git", dest: "docker-azul-jdk-11" }
           - { repo: "https://github.com/kurron/docker-azul-jdk-8-build.git", dest: "docker-azul-jdk-8-build" }
           - { repo: "https://github.com/kurron/docker-azul-jdk-9-build.git", dest: "docker-azul-jdk-9-build" }
+          - { repo: "https://github.com/kurron/docker-azul-jdk-10-build.git", dest: "docker-azul-jdk-10-build" }
+          - { repo: "https://github.com/kurron/docker-azul-jdk-11-build.git", dest: "docker-azul-jdk-11-build" }
 
 #     - shell: "cd {{ansible_user_dir}}/GitHub/git-secrets ; make install"
 
