@@ -1,50 +1,27 @@
+# https://linuxize.com/post/using-the-ssh-config-file/
+# ln -s $(pwd)/home-ssh-config.txt ~/.ssh/config
+
 Host stargate
   User rkurr
   HostName 192.168.1.227
-  ProxyCommand ssh -W %h:%p bastion
-  ExitOnForwardFailure yes
 
 Host atlantis
   User rkurr
   HostName 192.168.1.229
-  ProxyCommand ssh -W %h:%p bastion
-  ExitOnForwardFailure yes
 
 Host bifrost
   User rkurr
   HostName 192.168.1.233
-  ProxyCommand ssh -W %h:%p bastion
-  ExitOnForwardFailure yes
 
 Host alfheim
   User pi
   HostName 192.168.1.235
-  ProxyCommand ssh -W %h:%p bastion
-  ExitOnForwardFailure yes
 
 Host midgard
   User pi
   HostName 192.168.1.236
-  ProxyCommand ssh -W %h:%p bastion
-  ExitOnForwardFailure yes
 
-Host vanaheim
-  User rkurr
-  HostName 192.168.1.240
-  ProxyCommand ssh -W %h:%p bastion
-  ExitOnForwardFailure yes
-
-Host asgard
-  User rkurr
-  HostName 192.168.1.250
-  ProxyCommand ssh -W %h:%p bastion
-  ExitOnForwardFailure yes
-
-Host bastion
-  User pi
-  HostName rkurr.duckdns.org
-  ForwardAgent yes
-  ControlMaster auto
-  ControlPath ~/.ssh/control-path-%r@%h:%p
-  ControlPersist 30m
-
+Host *
+    User rkurr
+    Compression yes
+    LogLevel INFO
