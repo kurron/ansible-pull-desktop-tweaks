@@ -176,4 +176,4 @@
           - chromium
           - brave
           - --classic datagrip
-          - --classic goland
+          - postman
