@@ -164,14 +164,3 @@
           - tree
           - baobab
 
-- name: Snaps
-  hosts: localhost
-  become: True
-  tasks:
-      - command: "snap install {{ item }}"
-        loop:
-          - --classic code
-          - chromium
-          - brave
-          - --classic datagrip
-          - postman
