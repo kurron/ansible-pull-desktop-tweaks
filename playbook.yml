@@ -136,7 +136,6 @@
   hosts: localhost
   become: True
   tasks:
-      - hostname: name=kal-el
       - lineinfile:
             dest: /etc/hosts
             line: "{{ item }}"
