@@ -10,6 +10,5 @@ alias svim='sudo vim'
 alias update='sudo apt-get update && sudo apt-get upgrade'
 alias show-git-email='git config user.email'
 alias set-git-email='git config user.email "kurr@jvmguy.com"'
-alias start-containers='docker start some-scylla elastic-test'
-alias stop-containers='docker stop some-scylla elastic-test'
+alias aws='docker run --rm --interactive --tty --volume ~/.aws:/root/.aws --volume $(pwd):/aws amazon/aws-cli:latest'
 
