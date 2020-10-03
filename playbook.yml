@@ -34,57 +34,18 @@
           - { repo: "https://github.com/kurron/ansible-pull-desktop-tweaks.git", dest: "ansible-pull-desktop-tweaks" }
           - { repo: "https://github.com/kurron/ansible-pull-transparent.git", dest: "ansible-pull-transparent" }
           - { repo: "https://github.com/kurron/asciinema-screencasts.git", dest: "asciinema-screencasts" }
-          - { repo: "https://github.com/kurron/docker-oracle-jdk-8.git", dest: "docker-oracle-jdk-8" }
           - { repo: "https://github.com/kurron/jvm-development-environment.git", dest: "jvm-development-environment" }
           - { repo: "https://github.com/kurron/lazybones-experiment.git", dest: "lazybones-experiment" }
           - { repo: "https://github.com/kurron/sequence-diagrams.git", dest: "sequence-diagrams" }
           - { repo: "https://github.com/kurron/scripts.git", dest: "scripts" }
-          - { repo: "https://github.com/kurron/spring-cloud-aws-echo.git", dest: "spring-cloud-aws-echo" }
           - { repo: "https://github.com/kurron/spring-configuration-files.git", dest: "spring-configuration-files" }
-          - { repo: "https://github.com/kurron/tools-groovy.git", dest: "tools-groovy" }
-          - { repo: "https://github.com/kurron/tools-java.git", dest: "tools-java" }
-          - { repo: "https://github.com/kurron/vagrant-docker-server.git", dest: "vagrant-docker-server" }
 
           - { repo: "https://github.com/awslabs/git-secrets.git", dest: "git-secrets" }
 
           - { repo: "https://github.com/kurron/ansible-role-atlassian.git", dest: "ansible-role-atlassian" }
-          - { repo: "https://github.com/kurron/ansible-role-artifactory.git", dest: "ansible-role-artifactory" }
-          - { repo: "https://github.com/kurron/ansible-role-aws.git", dest: "ansible-role-aws" }
           - { repo: "https://github.com/kurron/ansible-role-base.git", dest: "ansible-role-base" }
-          - { repo: "https://github.com/kurron/ansible-role-block-device.git", dest: "ansible-role-block-device" }
-          - { repo: "https://github.com/kurron/ansible-role-cpp-developer.git", dest: "ansible-role-cpp-developer" }
           - { repo: "https://github.com/kurron/ansible-role-docker-host.git", dest: "ansible-role-docker-host" }
-          - { repo: "https://github.com/kurron/ansible-role-docker-keep-alive.git", dest: "ansible-role-docker-keep-alive-host" }
-          - { repo: "https://github.com/kurron/ansible-role-dot-net-developer.git", dest: "ansible-role-dot-net-developer" }
-          - { repo: "https://github.com/kurron/ansible-role-dsl-developer.git", dest: "ansible-role-dsl-developer" }
-          - { repo: "https://github.com/kurron/ansible-role-elastic-stack.git", dest: "ansible-role-elastic-stack" }
-          - { repo: "https://github.com/kurron/ansible-role-go-developer.git", dest: "ansible-role-go-developer" }
           - { repo: "https://github.com/kurron/ansible-role-hashicorp.git", dest: "ansible-role-hashicorp" }
-          - { repo: "https://github.com/kurron/ansible-role-javascript-developer.git", dest: "ansible-role-javascript-developer" }
-          - { repo: "https://github.com/kurron/ansible-role-jdk.git", dest: "ansible-role-jdk" }
-          - { repo: "https://github.com/kurron/ansible-role-jvm-developer.git", dest: "ansible-role-jvm-developer" }
-          - { repo: "https://github.com/kurron/ansible-role-jvpn.git", dest: "ansible-role-jvpn" }
-          - { repo: "https://github.com/kurron/ansible-role-logfaces.git", dest: "ansible-role-logfaces" }
-          - { repo: "https://github.com/kurron/ansible-role-logstash.git", dest: "ansible-role-logstash" }
-          - { repo: "https://github.com/kurron/ansible-role-node-js.git", dest: "ansible-role-node-js" }
-          - { repo: "https://github.com/kurron/ansible-role-mongodb.git", dest: "ansible-role-mongodb" }
-          - { repo: "https://github.com/kurron/ansible-role-mysql.git", dest: "ansible-role-mysql" }
-          - { repo: "https://github.com/kurron/ansible-role-operations.git", dest: "ansible-role-operations" }
-          - { repo: "https://github.com/kurron/ansible-role-os-limits.git", dest: "ansible-role-os-limits" }
-          - { repo: "https://github.com/kurron/ansible-role-plex.git", dest: "ansible-role-plex" }
-          - { repo: "https://github.com/kurron/ansible-role-php-developer.git", dest: "ansible-role-php-developer" }
-          - { repo: "https://github.com/kurron/ansible-role-python-developer.git", dest: "ansible-role-python-developer" }
-          - { repo: "https://github.com/kurron/ansible-role-rabbitmq.git", dest: "ansible-role-rabbitmq" }
-          - { repo: "https://github.com/kurron/ansible-role-redis.git", dest: "ansible-role-redis" }
-          - { repo: "https://github.com/kurron/ansible-role-resilio-sync.git", dest: "ansible-role-resilio-sync" }
-          - { repo: "https://github.com/kurron/ansible-role-rsync.git", dest: "ansible-role-rsync" }
-          - { repo: "https://github.com/kurron/ansible-role-ruby-developer.git", dest: "ansible-role-ruby-developer" }
-          - { repo: "https://github.com/kurron/ansible-role-software-developer.git", dest: "ansible-role-software-developer" }
-          - { repo: "https://github.com/kurron/ansible-role-sql-developer.git", dest: "ansible-role-sql-developer" }
-          - { repo: "https://github.com/kurron/ansible-role-time.git", dest: "ansible-role-time" }
-          - { repo: "https://github.com/kurron/ansible-role-transparent-huge-pages.git", dest: "ansible-role-transparent-huge-pages" }
-          - { repo: "https://github.com/kurron/ansible-role-vpc.git", dest: "ansible-role-vpc" }
-          - { repo: "https://github.com/kurron/ansible-role-virtualbox.git", dest: "ansible-role-virtualbox" }
 
           - { repo: "https://github.com/kurron/terraform-aws-alb.git", dest: "terraform-aws-alb" }
           - { repo: "https://github.com/kurron/terraform-aws-alb-service-attachment.git", dest: "terraform-aws-alb-service-attachment" }
@@ -107,28 +68,7 @@
           - { repo: "https://github.com/kurron/terraform-aws-security-groups.git", dest: "terraform-aws-security-groups" }
           - { repo: "https://github.com/kurron/terraform-aws-vpc.git", dest: "terraform-aws-vpc" }
 
-          - { repo: "https://github.com/kurron/packer-xubuntu-bionic.git", dest: "packer-xubuntu-bionic" }
-
-          - { repo: "https://github.com/kurron/cloud-formation-ecs.git", dest: "cloud-formation-ecs" }
-          - { repo: "https://github.com/kurron/cloud-formation-rds.git", dest: "cloud-formation-rds" }
-          - { repo: "https://github.com/kurron/cloud-formation-full-stack.git", dest: "cloud-formation-full-stack" }
-          - { repo: "https://github.com/kurron/cloud-formation-mongodb.git", dest: "cloud-formation-mongodb" }
-          - { repo: "https://github.com/kurron/cloud-formation-elasticache.git", dest: "cloud-formation-elasticache" }
-          - { repo: "https://github.com/kurron/cloud-formation-elasticsearch.git", dest: "cloud-formation-elasticsearch" }
-          - { repo: "https://github.com/kurron/cloud-formation-vpc.git", dest: "cloud-formation-vpc" }
-          - { repo: "https://github.com/kurron/cloud-formation-elb.git", dest: "cloud-formation-elb" }
-          - { repo: "https://github.com/kurron/cloud-formation-cdn.git", dest: "cloud-formation-cdn" }
-          - { repo: "https://github.com/kurron/cloud-formation-waf.git", dest: "cloud-formation-waf" }
-          - { repo: "https://github.com/kurron/cloud-formation-ecs-service.git", dest: "cloud-formation-ecs-service" }
-
-          - { repo: "https://github.com/kurron/docker-azul-jdk-8.git", dest: "docker-azul-jdk-8" }
-          - { repo: "https://github.com/kurron/docker-azul-jdk-9.git", dest: "docker-azul-jdk-9" }
-          - { repo: "https://github.com/kurron/docker-azul-jdk-10.git", dest: "docker-azul-jdk-10" }
-          - { repo: "https://github.com/kurron/docker-azul-jdk-11.git", dest: "docker-azul-jdk-11" }
-          - { repo: "https://github.com/kurron/docker-azul-jdk-8-build.git", dest: "docker-azul-jdk-8-build" }
-          - { repo: "https://github.com/kurron/docker-azul-jdk-9-build.git", dest: "docker-azul-jdk-9-build" }
-          - { repo: "https://github.com/kurron/docker-azul-jdk-10-build.git", dest: "docker-azul-jdk-10-build" }
-          - { repo: "https://github.com/kurron/docker-azul-jdk-11-build.git", dest: "docker-azul-jdk-11-build" }
+          - { repo: "https://github.com/kurron/packer-xubuntu-focal.git", dest: "packer-xubuntu-focal" }
 
 #     - shell: "cd {{ansible_user_dir}}/GitHub/git-secrets ; make install"
 
@@ -140,15 +80,16 @@
             dest: /etc/hosts
             line: "{{ item }}"
         loop:
-          - '192.168.1.222 batcave'
+          - '192.168.1.200 nidavellir'
+          - '192.168.1.211 asgard'
           - '192.168.1.227 stargate'
           - '192.168.1.229 atlantis'
+          - '192.168.1.230 potemkin'
           - '192.168.1.233 bifrost'
-          - '192.168.1.234 nas'
           - '192.168.1.235 alfheim'
           - '192.168.1.236 midgard'
           - '192.168.1.237 jotunheim'
-          - '192.168.1.240 vanaheim'
+          - '192.168.1.244 vulcan'
           - '192.168.1.250 asgard'
 
 - name: Tools (common)
