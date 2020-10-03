@@ -1,6 +1,15 @@
 # https://linuxize.com/post/using-the-ssh-config-file/
 # ln -s $(pwd)/home-ssh-config.txt ~/.ssh/config
 
+Host nidavellir
+  User rkurr
+  HostName 192.168.1.200
+  IdentityFile /home/rkurr/.ssh/ed25519
+
+Host asgard
+  User rkurr
+  HostName 192.168.1.211
+
 Host stargate
   User rkurr
   HostName 192.168.1.227
@@ -8,6 +17,10 @@ Host stargate
 Host atlantis
   User rkurr
   HostName 192.168.1.229
+
+Host potemkin
+  User ubuntu
+  HostName 192.168.1.230
 
 Host bifrost
   User rkurr
@@ -20,6 +33,18 @@ Host alfheim
 Host midgard
   User pi
   HostName 192.168.1.236
+
+Host vulcan
+  User rkurr
+  HostName 192.168.1.244
+
+Host alpha
+  User rkurr
+  HostName 192.168.1.128
+
+Host bravo
+  User rkurr
+  HostName 192.168.1.129
 
 Host *
     User rkurr
